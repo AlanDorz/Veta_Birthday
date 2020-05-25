@@ -1,12 +1,24 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <script src="p5.js"></script>
     <script src="p5.sound.min.js"></script>
+    <script src="anime.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
 
   </head>
   <body>
-    <script src="sketch.js"></script>
-  
-
-</body></html>
+    <section>
+      <img class="img-circle" src="circle.svg" alt="Нимб">
+      <p>медленно двигай курсор в этой области</p>
+      <img class="img-line" src="line.svg" alt="Линия">
+    </section>
+    <div class="hover-off"></div>
+    <div class="hover-on"></div>
+    <div id="canvas">
+      <script src="sketch.js"></script>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

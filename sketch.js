@@ -1,10 +1,11 @@
 let img;
 function preload() {
-  img = loadImage('veta-black.png');
+  img = loadImage('veta-full-high.png');
 }
 
 function setup() {
-  createCanvas(375, 500, WEBGL)
+  let myCanvas = createCanvas(750, 1000, WEBGL);
+  myCanvas.parent("canvas");
 }
 
 function draw() {
@@ -12,25 +13,28 @@ function draw() {
   fill(0)
   noStroke()
   
-  let tiles = map(mouseX, 0, 500, 0, 100);
+  let tiles = map(mouseX, 0, width, 0, 120, true);
   // let tiles = 50
   let tileSize = width/tiles;
   
   push();
   
   translate(0, 0, -100)
-  rotateY(radians(frameCount))
+  rotateY(radians(map(mouseX, 0, width/2, 300, 0, true)))
   for (let x = 0; x < tiles; x++) {
     for (let y = 0; y < tiles; y++) {
       
       let c = img.get(round(x * tileSize), round(y * tileSize));
-      let b = map(brightness(c), 0, 255, 0, 3);
-      let z = map(b, 0 , 3, -100, 200);
+      let b = map(brightness(c), 0, 255, 1, 0);
+      let z = map(b, 0 , 3, -450, 900);
       
       push();
-      translate(x*tileSize-width/2, y*tileSize-height/2.5, z);
+      translate(x*tileSize-width/2.2, y*tileSize-height/2.2, z);
+      fill(c)
       // ellipse(0, 0, tileSize*b, tileSize*b, 50)
-      sphere(tileSize*b*0.4, 3, 4)
+      // sphere(tileSize*b*0.9, 3, 4)
+      sphere(tileSize*b*0.6)
+      // box(tileSize*b*0.8)
       pop();
       
       // ellipse(x * tileSize, y * tileSize, 10, 10);
@@ -40,3 +44,6 @@ function draw() {
   }
   pop();
 }
+
+hoverOff = document.querySelector('hover-off')
+hoverOn = document.querySelector('hover-on')
