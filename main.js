@@ -1,8 +1,9 @@
-// let oF = anime({
-//     targets: '.img-circle',
-//     opacity: [0, 0],
-//     autoplay: false
-// });
+anime({
+    delay: 6000,
+    targets: 'a',
+    duration: 2000,
+    opacity: [0, 1]
+});
 
 // let offText = anime({
 //     targets: ['.img-line', 'p'],
@@ -19,15 +20,15 @@
 //     autoplay: false
 // });
 
-hoverOn = document.querySelector('.hover-on')
-hoverOff = document.querySelector('.hover-off')
-circle = document.querySelector('.img-circle')
+// hoverOn = document.querySelector('.hover-on')
+// hoverOff = document.querySelector('.hover-off')
+// circle = document.querySelector('.img-circle')
 
-// hoverOn.addEventListener('mouseover', oN.play)
-// hoverOff.addEventListener('mouseover', circle.style.visibility = 'hidden')
-hoverOn.onmouseover = circle.style.visibility = 'visible'
-// hoverOn.addEventListener('mouseover', offText.play)
-// hoverOff.addEventListener('mouseover', function () { oF.play })
+// // hoverOn.addEventListener('mouseover', oN.play)
+// // hoverOff.addEventListener('mouseover', circle.style.visibility = 'hidden')
+// hoverOn.onmouseover = circle.style.visibility = 'visible'
+// // hoverOn.addEventListener('mouseover', offText.play)
+// // hoverOff.addEventListener('mouseover', function () { oF.play })
 
-// hoverOn.onmouseover = oN.play
-// hoverOn.onmouseout = oF.play
+// // hoverOn.onmouseover = oN.play
+// // hoverOn.onmouseout = oF.play
