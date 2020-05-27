@@ -26,6 +26,7 @@ section {
   top: 110px;
   right: 170px;
   opacity: 0.5;
+  visibility: hidden;
 }
 
 .img-line {

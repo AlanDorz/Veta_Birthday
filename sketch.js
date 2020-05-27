@@ -1,6 +1,9 @@
 let img;
+let cimg;
 function preload() {
   img = loadImage('veta-full-high.png');
+  cimg = loadImage('circle.svg');
+  wishes = loadImage('wishes.svg');
 }
 
 function setup() {
@@ -10,6 +13,7 @@ function setup() {
 
 function draw() {
   background('#f1f1f1');
+
   fill(0)
   noStroke()
   
@@ -43,6 +47,20 @@ function draw() {
     }
   }
   pop();
+
+  push()
+  let yCircle = map(mouseX, 0, width / 2, -500, 0, true)
+  translate(40, -225 + yCircle)
+  // rotateZ(radians(frameCount*0.5))
+  // image(cimg, 40, -225, 328.5, 320.5)
+  image(cimg, -328.5 / 2, -320.5/2, 328.5, 320.5)
+  pop()
+
+  push()
+  translate(-width/2 - 493/2, 0)
+  let yWishes = map(mouseX, 0, width / 2, 500, 0, true)
+  image(wishes, width/2, height/3+yWishes)
+  pop()
 }
 
 hoverOff = document.querySelector('hover-off')
